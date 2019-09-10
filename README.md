@@ -12,7 +12,7 @@ Returns a list of words from a given word with exactly the same alphabets but in
 ---
 
 <br>
-<img src='Images/Ambience_1197403.jpg' width=170 style='float:left'>
+<img src='Images/Ambience_1197403.jpg' width=100 style='float:left'>
 <br>
 <p>
 <b>
