@@ -13,7 +13,7 @@ Returns a list of words from a given word with exactly the same alphabets but in
 
 <br>
 <img src='Images/Ambience_1197403.jpg' width=170 style='float:left'>
-<br><br><br><br><br>
+<br>
 <p>
 <b>
 <a href="https://www.hooksounds.com">Music by HookSounds</a>
