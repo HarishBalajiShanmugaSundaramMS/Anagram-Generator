@@ -5,7 +5,7 @@ Returns a list of words from a given word with exactly the same alphabets but in
 ---
 
 <h5>Screenshots</h5>
-<table>
+<table border='3'>
 <tr>
 <img src='Images/anagram.png' width=300 style='float:left'>
 <tr>
