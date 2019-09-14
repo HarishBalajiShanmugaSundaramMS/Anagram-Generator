@@ -4,18 +4,16 @@ Returns a list of words from a given word with exactly the same alphabets but in
 </p>
 ---
 
-<h5>Screenshot</h5>
+<h5>Screenshots</h5>
+<table>
+<tr>
 <img src='Images/anagram.png' width=300 style='float:left'>
+<tr>
+<tr>
 <img src='Images/anagram02.png' width=300 style='float:left'>
+</tr>
+<tr>
 <img src='Images/anagram03.png' width=300 style='float:left'>
-<p style='clear:both'>
+</tr>
+</table>
 ---
-
-<br>
-<img src='Images/Ambience_1197403.jpg' width=100 style='float:left'>
-<br>
-<p>
-<b>
-<a href="https://www.hooksounds.com">Music by HookSounds</a>
-<b>
-</p>
