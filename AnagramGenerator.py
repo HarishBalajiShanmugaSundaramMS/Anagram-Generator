@@ -40,7 +40,7 @@ def generateAnagram():
         msg = messagebox.showwarning('Empty Input', 'Please Enter A Word')
     else:
         ss=var.get()
-        d = enchant.Dict(ss)
+        d = enchant.Dict(ss) 
         word = str(entry01.get())
         word = word.upper()
         L = list(word)
