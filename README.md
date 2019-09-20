@@ -8,9 +8,9 @@ Returns a list of words from a given word with exactly the same alphabets but in
 <table border='3'>
 <tr>
 <td>
-<img src='Images/anagram.png' width=250 style='float:left'>
-<img src='Images/anagram02.png' width=250 style='float:left'>
-<img src='Images/anagram03.png' width=250 style='float:left'>
+<img src='Images/anagram.png' width=250 height=400 style='float:left'>
+<img src='Images/anagram02.png' width=250 height=400 style='float:left'>
+<img src='Images/anagram03.png' width=250 height=400 style='float:left'>
 </td>
 </tr>
 </table>
