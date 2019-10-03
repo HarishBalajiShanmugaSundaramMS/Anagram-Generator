@@ -3,6 +3,8 @@ import tkinter as tk
 from itertools import permutations
 from tkinter import *
 from tkinter import messagebox
+from googletrans import Translator
+
 
 import enchant
 
@@ -36,6 +38,8 @@ def onReturn(event):
 
 def generateAnagram():
     text01.configure(state='normal')
+    translator = Translator()
+
     if len(entry01.get()) == 0:
         msg = messagebox.showwarning('Empty Input', 'Please Enter A Word')
     else:

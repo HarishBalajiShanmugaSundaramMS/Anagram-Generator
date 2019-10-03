@@ -5,15 +5,18 @@ Returns a list of words from a given word with exactly the same alphabets but in
 ---
 
 <h5>Screenshots</h5>
+<center>
 <table border='3'>
 <tr>
-<img src='Images/anagram.png' width=300 style='float:left'>
+<img src='Images/anagram.png' width=160 height=250 style='float:left'>
 <tr>
 <tr>
-<img src='Images/anagram02.png' width=300 style='float:left'>
+<img src='Images/anagram02.png' width=160 height=250 style='float:left'>
 </tr>
 <tr>
-<img src='Images/anagram03.png' width=300 style='float:left'>
+<img src='Images/anagram03.png' width=160 height=250 style='float:left'>
 </tr>
 </table>
+</center>
+
 ---
