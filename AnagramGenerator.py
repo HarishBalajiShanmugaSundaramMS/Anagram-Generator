@@ -1,12 +1,11 @@
+import time
 import timeit
 import tkinter as tk
 from itertools import permutations
 from tkinter import *
 from tkinter import messagebox
-from googletrans import Translator
-
-
 import enchant
+from googletrans import Translator
 
 root = tk.Tk()
 root.title('Anagram Generator')
@@ -35,7 +34,6 @@ def clearText():
 def onReturn(event):
     generateAnagram()
 
-
 def generateAnagram():
     text01.configure(state='normal')
     translator = Translator()
@@ -43,8 +41,9 @@ def generateAnagram():
     if len(entry01.get()) == 0:
         msg = messagebox.showwarning('Empty Input', 'Please Enter A Word')
     else:
+        startTime = time.time()
         ss=var.get()
-        d = enchant.Dict(ss) 
+        d = enchant.Dict(ss)
         word = str(entry01.get())
         word = word.upper()
         L = list(word)
@@ -60,6 +59,8 @@ def generateAnagram():
         for j in range(length):
             quote = str(mylist[j] + '\n')
             text01.insert(END, quote)
+        endTime = time.time()
+        print('Took %s seconds to generate.' % (endTime - startTime))
     text01.configure(state='disabled')
 
 # ?===========Function Definition Ends Here==================================
