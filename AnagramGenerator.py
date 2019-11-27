@@ -30,7 +30,6 @@ def clearText():
     entry01.delete('0', END)
     text01.configure(state='disabled')
 
-
 def onReturn(event):
     generateAnagram()
 
@@ -61,6 +60,9 @@ def generateAnagram():
             text01.insert(END, quote)
         endTime = time.time()
         print('Took %s seconds to generate.' % (endTime - startTime))
+        status = Label(root, text='Time Taken : '+ str(endTime-startTime), relief=SUNKEN, anchor=W)
+        status.config(bg='#FCE762')
+        status.grid(row=6, sticky=W+E+N+S)
     text01.configure(state='disabled')
 
 # ?===========Function Definition Ends Here==================================
@@ -75,6 +77,8 @@ button01 = tk.Button(root, text='Generate', command=generateAnagram)
 button02 = tk.Button(root, text='Clear', command=clearText)
 text01 = tk.Text(root, font=('calibri', 20, 'bold'), state='disabled')
 text01.config(width=20, height=10, bg='aqua')
+
+
 
 #optionlist01=['English-US','English-UK','English-AU','German','French']
 optionlist01=['de-DE','fr-FR','en-GB','en-AU','en-US']
