@@ -30,8 +30,10 @@ def clearText():
     entry01.delete('0', END)
     text01.configure(state='disabled')
 
+
 def onReturn(event):
     generateAnagram()
+
 
 def generateAnagram():
     text01.configure(state='normal')
@@ -41,7 +43,7 @@ def generateAnagram():
         msg = messagebox.showwarning('Empty Input', 'Please Enter A Word')
     else:
         startTime = time.time()
-        ss=var.get()
+        ss = var.get()
         d = enchant.Dict(ss)
         word = str(entry01.get())
         word = word.upper()
@@ -60,7 +62,7 @@ def generateAnagram():
             text01.insert(END, quote)
         endTime = time.time()
         print('Took %s seconds to generate.' % (endTime - startTime))
-        status = Label(root, text='Time Taken : '+ str(endTime-startTime), relief=SUNKEN, anchor=W)
+        status = Label(root, text='Time Taken : ' + str(endTime-startTime), relief=SUNKEN, anchor=W)
         status.config(bg='#FCE762')
         status.grid(row=6, sticky=W+E+N+S)
     text01.configure(state='disabled')
@@ -79,12 +81,13 @@ text01 = tk.Text(root, font=('calibri', 20, 'bold'), state='disabled')
 text01.config(width=20, height=10, bg='aqua')
 
 
-
-#optionlist01=['English-US','English-UK','English-AU','German','French']
-optionlist01=['de-DE','fr-FR','en-GB','en-AU','en-US']
-var=tk.StringVar(root)
+# optionlist01=['English-US','English-UK','English-AU','German','French']
+#d ={'de-DE':'German','fr-FR':'French', 'en-GB':'British English', 'en-AU':'Australian English', 'en-US':'American English'}
+#print(d['de-DE','fr-FR'])
+optionlist01 = ['de-DE', 'fr-FR', 'en-GB', 'en-AU', 'en-US']
+var = tk.StringVar(root)
 var.set(optionlist01[1])
-optionmenu01=tk.OptionMenu(root,var,*optionlist01)
+optionmenu01 = tk.OptionMenu(root, var, *optionlist01)
 optionmenu01.config(bg='#FCE762')
 
 # ?==============Widget Arrangement in Grid==================================
@@ -95,5 +98,5 @@ button01.grid(row=3, column=0, padx=5, pady=5, sticky=W+E+N+S)
 text01.grid(row=4, column=0, padx=5, pady=5, sticky=W+E+N+S)
 button02.grid(row=5, column=0, padx=5, pady=5, sticky=W+E+N+S)
 # ?==========================================================================
-#print(enchant.list_languages())
+# print(enchant.list_languages())
 root.mainloop()
