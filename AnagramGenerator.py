@@ -1,5 +1,4 @@
 import time
-#import timeit
 import tkinter as tk
 from itertools import permutations
 from tkinter import *
@@ -81,8 +80,6 @@ button01 = tk.Button(root, text='Generate', command=generateAnagram)
 button02 = tk.Button(root, text='Clear', command=clearText)
 text01 = tk.Text(root, font=('calibri', 20, 'bold'), state='disabled')
 text01.config(width=20, height=10, bg='aqua')
-
-
 dd = {'German': 'de-DE', 'French': 'fr-FR', 'British English': 'en-GB',
       'Australian English': 'en-AU', 'American English': 'en-US'}
 temp1 = []
@@ -96,14 +93,6 @@ for key in dd:
     optionmenu01 = tk.OptionMenu(root, var, *temp2)
     optionmenu01.config(bg='#FCE762')
 
-'''
-optionlist01 = ['de-DE', 'fr-FR', 'en-GB', 'en-AU', 'en-US']
-var = tk.StringVar(root)
-var.set(optionlist01[1])
-optionmenu01 = tk.OptionMenu(root, var, *optionlist01)
-optionmenu01.config(bg='#FCE762')
-'''
-
 # ?==============Widget Arrangement in Grid==================================
 optionmenu01.grid(row=0, column=0, padx=5, pady=5, sticky=W+E+N+S)
 label01.grid(row=1, column=0, padx=5, pady=5, sticky=W+E+N+S)
@@ -112,5 +101,5 @@ button01.grid(row=3, column=0, padx=5, pady=5, sticky=W+E+N+S)
 text01.grid(row=4, column=0, padx=5, pady=5, sticky=W+E+N+S)
 button02.grid(row=5, column=0, padx=5, pady=5, sticky=W+E+N+S)
 # ?==========================================================================
-# print(enchant.list_languages())
+
 root.mainloop()

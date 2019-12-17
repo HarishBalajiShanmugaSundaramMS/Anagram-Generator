@@ -4,8 +4,32 @@ Returns a list of words from a given word with exactly the same alphabets but in
 </p>
 
 ---
-<h5>Screenshots</h5>
+<table>
+  <th>Language</th>
+  <th>Code</th>
+  <tr>
+    <td>German</td>
+    <td>de-DE</td>
+  </tr>
+  <tr>
+    <td>French</td>
+    <td>fr-FR</td>
+  </tr>
+  <tr>
+    <td>British English</td>
+    <td>en-GB</td>
+  </tr>
+  <tr>
+    <td>American English</td>
+    <td>en-US</td>
+  </tr>
+  <tr>
+    <td>Australian English</td>
+    <td>en-AU</td>
+  </tr>
+  </table>
 
+<h5>Screenshots</h5>
 <table>
 <tr>
 <td>
