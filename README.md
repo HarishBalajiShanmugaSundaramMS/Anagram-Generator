@@ -6,14 +6,14 @@ Returns a list of words from a given word with exactly the same alphabets but in
 ---
 <h5>Screenshots</h5>
 
-
 <table>
 <tr>
 <td>
-<img src='Images/anagram.png' width=250 height=400 style='float:left'>
+<img src='Images/anagram01.png' width=250 height=400 style='float:left'>
 <img src='Images/anagram02.png' width=250 height=400 style='float:left'>
 <img src='Images/anagram03.png' width=250 height=400 style='float:left'>
 </td>
 </tr>
 </table>
+
 ---
