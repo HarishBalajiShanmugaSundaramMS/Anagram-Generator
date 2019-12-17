@@ -44,7 +44,8 @@ def generateAnagram():
     else:
         startTime = time.time()
         ss = var.get()
-        d = enchant.Dict(ss)
+        #print(ss, dd[ss])
+        d = enchant.Dict(dd[ss])
         word = str(entry01.get())
         word = word.upper()
         L = list(word)
@@ -62,7 +63,8 @@ def generateAnagram():
             text01.insert(END, quote)
         endTime = time.time()
         print('Took %s seconds to generate.' % (endTime - startTime))
-        status = Label(root, text='Time Taken : ' + str(endTime-startTime), relief=SUNKEN, anchor=W)
+        status = Label(root, text='Time Taken : ' +
+                       str(endTime-startTime), relief=SUNKEN, anchor=W)
         status.config(bg='#FCE762')
         status.grid(row=6, sticky=W+E+N+S)
     text01.configure(state='disabled')
@@ -81,14 +83,26 @@ text01 = tk.Text(root, font=('calibri', 20, 'bold'), state='disabled')
 text01.config(width=20, height=10, bg='aqua')
 
 
-# optionlist01=['English-US','English-UK','English-AU','German','French']
-#d ={'de-DE':'German','fr-FR':'French', 'en-GB':'British English', 'en-AU':'Australian English', 'en-US':'American English'}
-#print(d['de-DE','fr-FR'])
+dd = {'German': 'de-DE', 'French': 'fr-FR', 'British English': 'en-GB',
+      'Australian English': 'en-AU', 'American English': 'en-US'}
+temp1 = []
+temp2 = []
+for key in dd:
+    temp1.append(dd[key])
+    temp2.append(key)
+    optionlist01 = temp1
+    var = tk.StringVar(root)
+    var.set(key)
+    optionmenu01 = tk.OptionMenu(root, var, *temp2)
+    optionmenu01.config(bg='#FCE762')
+
+'''
 optionlist01 = ['de-DE', 'fr-FR', 'en-GB', 'en-AU', 'en-US']
 var = tk.StringVar(root)
 var.set(optionlist01[1])
 optionmenu01 = tk.OptionMenu(root, var, *optionlist01)
 optionmenu01.config(bg='#FCE762')
+'''
 
 # ?==============Widget Arrangement in Grid==================================
 optionmenu01.grid(row=0, column=0, padx=5, pady=5, sticky=W+E+N+S)
