@@ -36,6 +36,7 @@ Returns a list of words from a given word with exactly the same alphabets but in
 <img src='Images/anagram01.png' width=250 height=400 style='float:left'>
 <img src='Images/anagram02.png' width=250 height=400 style='float:left'>
 <img src='Images/anagram03.png' width=250 height=400 style='float:left'>
+<img src='Images/SQLiteStudio01.png' width=750 style='float:left'>
 </td>
 </tr>
 </table>
