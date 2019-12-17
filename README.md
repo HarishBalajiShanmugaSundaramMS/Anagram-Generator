@@ -17,3 +17,19 @@ Returns a list of words from a given word with exactly the same alphabets but in
 </table>
 
 ---
+
+<h5>Required Packages<h5>
+<table>
+  <th>Name</th>
+  <th>Version</th>
+  <tr>
+    <td>pyenchant</td>
+    <td>2.0.0</td>
+  </tr>
+  <tr>
+    <td>googletrans</td>
+    <td>  2.4.0
+</td>
+  </tr>
+  </table>
+

@@ -1,5 +1,5 @@
 import time
-import timeit
+#import timeit
 import tkinter as tk
 from itertools import permutations
 from tkinter import *
@@ -62,9 +62,9 @@ def generateAnagram():
             quote = str(mylist[j] + '\n')
             text01.insert(END, quote)
         endTime = time.time()
-        print('Took %s seconds to generate.' % (endTime - startTime))
-        status = Label(root, text='Time Taken : ' +
-                       str(endTime-startTime), relief=SUNKEN, anchor=W)
+        #print('Took %s seconds to generate.' % (endTime - startTime))
+        status = tk.Label(root, text='Time Taken : ' +
+                          str(endTime-startTime), relief=SUNKEN, anchor=W)
         status.config(bg='#FCE762')
         status.grid(row=6, sticky=W+E+N+S)
     text01.configure(state='disabled')
