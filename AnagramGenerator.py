@@ -11,7 +11,8 @@ from googletrans import Translator
 root = tk.Tk()
 root.title('Anagram Generator')
 root.resizable(0, 0)
-root.config(bg='#25D366')
+root.config(bg='#011627')
+root.wm_attributes('-alpha', '0.95')
 
 db_connection = sqlite3.connect('Anagram.db')
 cursor = db_connection.cursor()
@@ -26,6 +27,7 @@ cursor = db_connection.cursor()
 # ?==========================================================================
 
 # ?==========Function Definitions Begins Here================================
+
 
 def clearText():
     text01.configure(state='normal')
@@ -71,6 +73,8 @@ def generateAnagram():
             list_length = len(databaselist)
 
         endTime = time.time()
+        totalTime = round(endTime-startTime, 3)
+        print(totalTime)
         print(databaselist)
         print(ss)
         print(list_length)
@@ -113,8 +117,8 @@ def generateAnagram():
         else:
             print('Not An Anagram')
         status = tk.Label(root, text='Time Taken : ' +
-                          str(endTime-startTime), relief=SUNKEN, anchor=W)
-        status.config(bg='#FCE762')
+                          str(totalTime)+' seconds', relief=SUNKEN, anchor=W)
+        status.config(bg='#011627', fg='#01BAEF')
         status.grid(row=6, sticky=W+E+N+S)
     text01.configure(state='disabled')
 
@@ -122,14 +126,21 @@ def generateAnagram():
 
 
 label01 = tk.Label(root, text='Enter a Word', font=('calibri', 40, 'bold'))
-label01.config(bg='#25D366')
+label01.config(bg='#011627', fg='#01BAEF')
 entry01 = tk.Entry(root, text='Enter a Word', font=('calibri', 20, 'bold'))
+entry01.config(bg='#011627', fg='#01BAEF')
+
+labelFrame = tk.LabelFrame(root, text='Recorded Anagrams')
+labelFrame.config(bg='#011627', fg='#01BAEF', borderwidth=2,
+                  width=600, background='#011627')
+
 entry01.focus()  # * Sets Focus
 entry01.bind('<Return>', onReturn)
-button01 = tk.Button(root, text='Generate', command=generateAnagram)
-button02 = tk.Button(root, text='Clear', command=clearText)
+button01 = tk.Button(root, text='Generate',
+                     command=generateAnagram, fg='green')
+button02 = tk.Button(root, text='Clear', command=clearText, fg='red')
 text01 = tk.Text(root, font=('calibri', 20, 'bold'), state='disabled')
-text01.config(width=20, height=10, bg='aqua')
+text01.config(width=20, height=10, bg='#011627', fg='#01BAEF')
 dd = {'German': 'de-DE', 'French': 'fr-FR', 'British English': 'en-GB',
       'Australian English': 'en-AU', 'American English': 'en-US'}
 temp1 = []
@@ -141,8 +152,7 @@ for key in dd:
     var = tk.StringVar(root)
     var.set(key)
     optionmenu01 = tk.OptionMenu(root, var, *temp2)
-    optionmenu01.config(bg='#FCE762')
-
+    optionmenu01.config(bg='#01BAEF', fg='#011627')
 # ?==============Widget Arrangement in Grid==================================
 optionmenu01.grid(row=0, column=0, padx=5, pady=5, sticky=W+E+N+S)
 label01.grid(row=1, column=0, padx=5, pady=5, sticky=W+E+N+S)
@@ -150,6 +160,6 @@ entry01.grid(row=2, column=0, padx=5, pady=5, sticky=W+E+N+S)
 button01.grid(row=3, column=0, padx=5, pady=5, sticky=W+E+N+S)
 text01.grid(row=4, column=0, padx=5, pady=5, sticky=W+E+N+S)
 button02.grid(row=5, column=0, padx=5, pady=5, sticky=W+E+N+S)
+labelFrame.grid(row=0, column=1, rowspan=7, padx=5, pady=5, sticky=W+E+N+S)
 # ?==========================================================================
-
 root.mainloop()
