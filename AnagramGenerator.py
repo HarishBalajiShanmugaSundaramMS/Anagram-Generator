@@ -1,8 +1,10 @@
+import sqlite3
 import time
 import tkinter as tk
 from itertools import permutations
 from tkinter import *
 from tkinter import messagebox
+
 import enchant
 from googletrans import Translator
 
@@ -10,6 +12,9 @@ root = tk.Tk()
 root.title('Anagram Generator')
 root.resizable(0, 0)
 root.config(bg='#25D366')
+
+db_connection = sqlite3.connect('Anagram.db')
+cursor = db_connection.cursor()
 
 # ?=========Try these examples===============================================
 # *     coder            edit              sonic
@@ -21,7 +26,6 @@ root.config(bg='#25D366')
 # ?==========================================================================
 
 # ?==========Function Definitions Begins Here================================
-
 
 def clearText():
     text01.configure(state='normal')
@@ -41,6 +45,8 @@ def generateAnagram():
     if len(entry01.get()) == 0:
         msg = messagebox.showwarning('Empty Input', 'Please Enter A Word')
     else:
+        databaselist = []
+        counter = 99
         startTime = time.time()
         ss = var.get()
         #print(ss, dd[ss])
@@ -60,8 +66,52 @@ def generateAnagram():
         for j in range(length):
             quote = str(mylist[j] + '\n')
             text01.insert(END, quote)
+            print(mylist[j])
+            databaselist.append(mylist[j])
+            list_length = len(databaselist)
+
         endTime = time.time()
-        #print('Took %s seconds to generate.' % (endTime - startTime))
+        print(databaselist)
+        print(ss)
+        print(list_length)
+        if list_length == 2:
+            cursor.execute('Insert into Anagram_Table(Anagram_LANGUAGE, word_01, word_02) values(?,?,?)',
+                           (ss, databaselist[0], databaselist[1]))
+            db_connection.commit()
+        elif list_length == 3:
+            cursor.execute('Insert into Anagram_Table(Anagram_LANGUAGE, word_01, word_02,word_03) values(?,?,?,?)',
+                           (ss, databaselist[0], databaselist[1], databaselist[2]))
+            db_connection.commit()
+        elif list_length == 4:
+            cursor.execute('Insert into Anagram_Table(Anagram_LANGUAGE, word_01, word_02,word_03,word_04) values(?,?,?,?,?)',
+                           (ss, databaselist[0], databaselist[1], databaselist[2], databaselist[3]))
+            db_connection.commit()
+        elif list_length == 5:
+            cursor.execute('Insert into Anagram_Table(Anagram_LANGUAGE, word_01, word_02,word_03,word_04,word_05) values(?,?,?,?,?,?)',
+                           (ss, databaselist[0], databaselist[1], databaselist[2], databaselist[3], databaselist[4]))
+            db_connection.commit()
+        elif list_length == 6:
+            cursor.execute('Insert into Anagram_Table(Anagram_LANGUAGE, word_01, word_02,word_03,word_04,word_05,word_06) values(?,?,?,?,?,?,?)', (
+                ss, databaselist[0], databaselist[1], databaselist[2], databaselist[3], databaselist[4], databaselist[5]))
+            db_connection.commit()
+        elif list_length == 7:
+            cursor.execute('Insert into Anagram_Table(Anagram_LANGUAGE, word_01, word_02,word_03,word_04,word_05,word_06,word_07) values(?,?,?,?,?,?,?,?)',
+                           (ss, databaselist[0], databaselist[1], databaselist[2], databaselist[3], databaselist[4], databaselist[5], databaselist[6]))
+            db_connection.commit()
+        elif list_length == 8:
+            cursor.execute('Insert into Anagram_Table(Anagram_LANGUAGE, word_01, word_02,word_03,word_04,word_05,word_06,word_07,word_08) values(?,?,?,?,?,?,?,?,?)',
+                           (ss, databaselist[0], databaselist[1], databaselist[2], databaselist[3], databaselist[4], databaselist[5], databaselist[6], databaselist[7]))
+            db_connection.commit()
+        elif list_length == 9:
+            cursor.execute('Insert into Anagram_Table(Anagram_LANGUAGE, word_01, word_02,word_03,word_04,word_05,word_06,word_07,word_08,word_09) values(?,?,?,?,?,?,?,?,?,?)', (ss,
+                                                                                                                                                                                 databaselist[0], databaselist[1], databaselist[2], databaselist[3], databaselist[4], databaselist[5], databaselist[6], databaselist[7], databaselist[8]))
+            db_connection.commit()
+        elif list_length == 10:
+            cursor.execute('Insert into Anagram_Table(Anagram_LANGUAGE, word_01, word_02,word_03,word_04,word_05,word_06,word_07,word_08,word_09,word_10) values(?,?,?,?,?,?,?,?,?,?,?)', (ss,
+                                                                                                                                                                                           databaselist[0], databaselist[1], databaselist[2], databaselist[3], databaselist[4], databaselist[5], databaselist[6], databaselist[7], databaselist[8], databaselist[9]))
+            db_connection.commit()
+        else:
+            print('Not An Anagram')
         status = tk.Label(root, text='Time Taken : ' +
                           str(endTime-startTime), relief=SUNKEN, anchor=W)
         status.config(bg='#FCE762')
