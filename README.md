@@ -30,7 +30,8 @@ Returns a list of words from a given word with exactly the same alphabets but in
   </table>
 
 <h5>Screenshots</h5>
-<table>
+<center>
+  <table>
 <tr>
 <td>
 <img src='Images/anagram01.png' width=250 height=400 style='float:left'>
@@ -39,6 +40,8 @@ Returns a list of words from a given word with exactly the same alphabets but in
 </td>
 </tr>
 </table>
+</center>
+
  <h5> The generated words are stored in an SQL database file
 <img src='Images/SQLiteStudio01.png' width=750 style='float:left'>
 
