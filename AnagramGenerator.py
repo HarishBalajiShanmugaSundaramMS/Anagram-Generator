@@ -16,7 +16,7 @@ root.title('Anagram Generator')
 #? Restricts Resizing
 root.resizable(0, 0)
 root.config(bg='#011627')
-#root.wm_attributes('-alpha', '0.98')
+root.wm_attributes('-alpha', '0.98')
 fr =tk.Frame(root)
 fr.config(bg='#011627')
 list_length=0
@@ -26,7 +26,7 @@ totalTime=0.0
 
 def selectionCall():
     selection=str(radValue.get())
-    print(selection)
+    print('Selected RadioButton: ',selection)
     if (selection=='1'):
         root.config(bg='#FFFFFF')
         label01.config(bg='#FFFFFF', fg='#000000')
@@ -36,9 +36,12 @@ def selectionCall():
         fr.config(bg='#FFFFFF')
         r1.config(bg='#FFFFFF', fg='#000000')
         r2.config(bg='#FFFFFF', fg='#000000')
+        r3.config(bg='#FFFFFF', fg='#000000')
+        button01.config(fg='green')
+        button02.config(fg='red')
         #status.config(bg='#FFFFFF', fg='#000000')
 
-    elif (selection=='2'):
+    if (selection=='2'):
         root.config(bg='#011627')
         label01.config(bg='#011627', fg='#01BAEF')
         entry01.config(bg='#011627', fg='#01BAEF')
@@ -47,16 +50,36 @@ def selectionCall():
         fr.config(bg='#011627')
         r1.config(bg='#011627', fg='#01BAEF')
         r2.config(bg='#011627', fg='#01BAEF')
+        r3.config(bg='#011627', fg='#01BAEF')
+        button01.config(fg='green')
+        button02.config(fg='red')
+        #status.config(bg='#011627', fg='#01BAEF')
+    
+    elif (selection=='3'):
+        root.config(bg='#000000')
+        label01.config(bg='#000000', fg='#FFFFFF')
+        entry01.config(bg='#000000', fg='#FFFFFF')
+        text01.config(bg='#000000', fg='#FFFFFF')
+        optionmenu01.config(bg='#FFFFFF', fg='#000000')
+        fr.config(bg='#000000')
+        r1.config(bg='#000000', fg='#FFFFFF')
+        r2.config(bg='#000000', fg='#FFFFFF')
+        r3.config(bg='#000000', fg='#FFFFFF')
+        button01.config(fg='#000000')
+        button02.config(fg='#000000')
         #status.config(bg='#011627', fg='#01BAEF')
 
-r1=tk.Radiobutton(fr,text='Light Mode', variable=radValue, value=1,command=selectionCall)
+r1=tk.Radiobutton(fr,text='Light ☀︎', variable=radValue, value=1,command=selectionCall, font=('calibri', 16, 'bold'))
 r1.config(bg='#011627', fg='#01BAEF')
-r2=tk.Radiobutton(fr,text='Dark Mode', variable=radValue, value=2,command=selectionCall)
+r2=tk.Radiobutton(fr,text='Dark ☾', variable=radValue, value=2,command=selectionCall, font=('calibri', 16, 'bold'))
 r2.config(bg='#011627', fg='#01BAEF')
+r3=tk.Radiobutton(fr,text='Contrast ☯︎', variable=radValue, value=3,command=selectionCall, font=('calibri', 16, 'bold'))
+r3.config(bg='#011627', fg='#01BAEF')
 
 fr.grid(row=7, column=0, padx=5, pady=5, sticky=W+E+N+S)
 r1.grid(row=0, column=0, padx=5, pady=5, sticky=W+E+N+S)
 r2.grid(row=0, column=1, padx=5, pady=5, sticky=W+E+N+S)
+r3.grid(row=0, column=2, padx=5, pady=5, sticky=W+E+N+S)
 
 
 
@@ -182,8 +205,8 @@ labelFrame.config(bg='#011627', fg='#01BAEF', borderwidth=2,
 entry01.focus()  # * Sets Focus
 entry01.bind('<Return>', onReturn)
 button01 = tk.Button(root, text='Generate & Store ✔︎',
-                     command=generateAnagram, fg='green')
-button02 = tk.Button(root, text='Clear ✘', command=clearText, fg='red')
+                     command=generateAnagram, fg='green', font=('calibri', 16, 'bold'))
+button02 = tk.Button(root, text='Clear ✘', command=clearText, fg='red', font=('calibri', 16, 'bold'))
 
 text01 = tk.Text(root, font=('calibri', 20, 'bold'), state='disabled')
 text01.config(width=20, height=10, bg='#011627', fg='#01BAEF')
@@ -198,7 +221,7 @@ for key in dd:
     var = tk.StringVar(root)
     var.set(key)
     optionmenu01 = tk.OptionMenu(root, var, *temp2)
-    optionmenu01.config(bg='#01BAEF', fg='#011627')
+    optionmenu01.config(bg='#01BAEF', fg='#011627', font=('calibri', 16, 'bold'))
 # ?==============Widget Arrangement in Grid==================================
 optionmenu01.grid(row=0, column=0, padx=5, pady=5, sticky=W+E+N+S)
 label01.grid(row=1, column=0, padx=5, pady=5, sticky=W+E+N+S)
