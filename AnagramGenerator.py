@@ -121,7 +121,7 @@ def generateAnagram():
         counter = 99
         startTime = time.time()
         ss = var.get()
-        #print(ss, dd[ss])
+        print(ss, dd[ss])
         d = enchant.Dict(dd[ss])
         word = str(entry01.get())
         word = word.upper()
@@ -147,47 +147,7 @@ def generateAnagram():
         print(databaselist)
         print(ss)
         print(list_length)
-        if list_length == 2:
-            cursor.execute('Insert into Anagram_Table(Anagram_LANGUAGE,Time_Taken, word_01, word_02) values(?,?,?,?)',
-                           (ss, totalTime, databaselist[0], databaselist[1]))
-            db_connection.commit()
-        elif list_length == 3:
-            cursor.execute('Insert into Anagram_Table(Anagram_LANGUAGE, Time_Taken,word_01, word_02,word_03) values(?,?,?,?,?)', (ss, totalTime, databaselist[0], databaselist[1], databaselist[2]))
-            db_connection.commit()
-        elif list_length == 4:
-            cursor.execute('Insert into Anagram_Table(Anagram_LANGUAGE,  Time_Taken,word_01, word_02,word_03,word_04) values(?,?,?,?,?,?)',
-                           (ss, totalTime, databaselist[0], databaselist[1], databaselist[2], databaselist[3]))
-            db_connection.commit()
-        elif list_length == 5:
-            cursor.execute('Insert into Anagram_Table(Anagram_LANGUAGE,  Time_Taken,word_01, word_02,word_03,word_04,word_05) values(?,?,?,?,?,?,?)',
-                           (ss, totalTime, databaselist[0], databaselist[1], databaselist[2], databaselist[3], databaselist[4]))
-            db_connection.commit()
-        elif list_length == 6:
-            cursor.execute('Insert into Anagram_Table(Anagram_LANGUAGE,  Time_Taken,word_01, word_02,word_03,word_04,word_05,word_06) values(?,?,?,?,?,?,?,?)', (
-                ss, totalTime, databaselist[0], databaselist[1], databaselist[2], databaselist[3], databaselist[4], databaselist[5]))
-            db_connection.commit()
-        elif list_length == 7:
-            cursor.execute('Insert into Anagram_Table(Anagram_LANGUAGE, Time_Taken, word_01, word_02,word_03,word_04,word_05,word_06,word_07) values(?,?,?,?,?,?,?,?,?)',
-                           (ss, totalTime, databaselist[0], databaselist[1], databaselist[2], databaselist[3], databaselist[4], databaselist[5], databaselist[6]))
-            db_connection.commit()
-        elif list_length == 8:
-            cursor.execute('Insert into Anagram_Table(Anagram_LANGUAGE,  Time_Taken,word_01, word_02,word_03,word_04,word_05,word_06,word_07,word_08) values(?,?,?,?,?,?,?,?,?,?)',
-                           (ss, totalTime, databaselist[0], databaselist[1], databaselist[2], databaselist[3], databaselist[4], databaselist[5], databaselist[6], databaselist[7]))
-            db_connection.commit()
-        elif list_length == 9:
-            cursor.execute('Insert into Anagram_Table(Anagram_LANGUAGE,  Time_Taken,word_01, word_02,word_03,word_04,word_05,word_06,word_07,word_08,word_09) values(?,?,?,?,?,?,?,?,?,?,?)', (ss, totalTime,
-                                                                                                                                                                                 databaselist[0], databaselist[1], databaselist[2], databaselist[3], databaselist[4], databaselist[5], databaselist[6], databaselist[7], databaselist[8]))
-            db_connection.commit()
-        elif list_length == 10:
-            cursor.execute('Insert into Anagram_Table(Anagram_LANGUAGE,  Time_Taken,word_01, word_02,word_03,word_04,word_05,word_06,word_07,word_08,word_09,word_10) values(?,?,?,?,?,?,?,?,?,?,?,?)', (ss, totalTime,
-                                                                                                                                                                                           databaselist[0], databaselist[1], databaselist[2], databaselist[3], databaselist[4], databaselist[5], databaselist[6], databaselist[7], databaselist[8], databaselist[9]))
-            db_connection.commit()
-        else:
-            print('Not An Anagram')
-            #status = tk.Label(root, text='Time Taken : ' + str(totalTime)+' seconds', relief=SUNKEN, anchor=W)
-            #status = tk.Label(root, text='Time Taken : ' + str(totalTime)+' seconds', relief=SUNKEN, anchor=W)
-            #status.config(bg='#011627', fg='#01BAEF')
-            #status.grid(row=6, sticky=W+E+N+S)
+        
     text01.configure(state='disabled')
 
 # ?===========Function Definition Ends Here==================================
