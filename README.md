@@ -2,7 +2,6 @@
 <p>
 Returns a list of words from a given word with exactly the same alphabets but in different arrangements with some meaning. This is a simple application that uses permutation to compute all the possible arrangements of the word and checks the resulting list against the available dictionaries. Only the meaningful words are returned as the output.
 </p>
-
 ---
 <table>
   <th>Language</th>
@@ -28,8 +27,9 @@ Returns a list of words from a given word with exactly the same alphabets but in
     <td>en-AU</td>
   </tr>
   </table>
-
 <h5>Screenshots</h5>
+<img src='Images/Anagram.gif' width=250 height=400>
+
 <center>
   <table>
 <tr>
