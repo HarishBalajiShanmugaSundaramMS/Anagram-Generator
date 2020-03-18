@@ -1,6 +1,5 @@
 
 #? Required Packages
-import sqlite3
 import time
 import tkinter as tk
 from itertools import permutations
@@ -81,11 +80,6 @@ r1.grid(row=0, column=0, padx=5, pady=5, sticky=W+E+N+S)
 r2.grid(row=0, column=1, padx=5, pady=5, sticky=W+E+N+S)
 r3.grid(row=0, column=2, padx=5, pady=5, sticky=W+E+N+S)
 
-
-
-db_connection = sqlite3.connect('Anagram.db')
-cursor = db_connection.cursor()
-
 # ?=========Try these examples===============================================
 # *     coder            edit              sonic
 # *     post             name              boredom
@@ -97,18 +91,14 @@ cursor = db_connection.cursor()
 
 # ?==========Function Definitions Begins Here================================
 
-
 def clearText():
     text01.configure(state='normal')
     text01.delete('1.0', END)
     entry01.delete('0', END)
     text01.configure(state='disabled')
 
-
 def onReturn(event):
     generateAnagram()
-
-
 
 def generateAnagram():
     text01.configure(state='normal')
@@ -151,7 +141,6 @@ def generateAnagram():
     text01.configure(state='disabled')
 
 # ?===========Function Definition Ends Here==================================
-
 
 label01 = tk.Label(root, text='Enter a Word', font=('calibri', 40, 'bold'))
 label01.config(bg='#011627', fg='#01BAEF')
