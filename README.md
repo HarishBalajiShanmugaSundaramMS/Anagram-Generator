@@ -51,6 +51,7 @@ Returns a list of words from a given word with exactly the same alphabets but in
   </table>
 ```bash
 brew update
+
 brew install enchant
 ```
 
