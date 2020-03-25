@@ -49,11 +49,10 @@ Returns a list of words from a given word with exactly the same alphabets but in
 </td>
   </tr>
   </table>
-```
 
-```
 
 <i>brew update
-brew<br>install enchant</i>
+brew<br>install enchant
+</i>
 
 Use the above scripts to install enchant package on a Mac system.
