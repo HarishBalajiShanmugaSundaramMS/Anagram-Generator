@@ -50,7 +50,10 @@ Returns a list of words from a given word with exactly the same alphabets but in
   </tr>
   </table>
 ```
-brew update
-brew install enchant
-Use the above scripts to install enchant package on a Mac system.
+
 ```
+
+<i>brew update
+brew<br>install enchant</i>
+
+Use the above scripts to install enchant package on a Mac system.
