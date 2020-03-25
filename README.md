@@ -33,7 +33,7 @@ Returns a list of words from a given word with exactly the same alphabets but in
     <td>Australian English</td>
     <td>en-AU</td>
   </tr>
-  </table>
+</table>
 <hr>
 <h5>Required Packages<h5>
 <table>
@@ -49,13 +49,8 @@ Returns a list of words from a given word with exactly the same alphabets but in
 </td>
   </tr>
   </table>
-
-
-brew update
-
-brew install enchant
-
 ```
-
+brew update
+brew install enchant
 Use the above scripts to install enchant package on a Mac system.
 ```
