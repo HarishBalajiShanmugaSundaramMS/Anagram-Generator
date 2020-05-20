@@ -153,7 +153,7 @@ labelFrame.config(bg='#011627', fg='#01BAEF', borderwidth=2,
 
 entry01.focus()  # * Sets Focus
 entry01.bind('<Return>', onReturn)
-button01 = tk.Button(root, text='Generate ✔︎',
+button01 = tk.Button(root, text='Generate Anagrams ✔︎',
                      command=generateAnagram, fg='green', font=('calibri', 16, 'bold'))
 button02 = tk.Button(root, text='Clear ✘', command=clearText, fg='red', font=('calibri', 16, 'bold'))
 
