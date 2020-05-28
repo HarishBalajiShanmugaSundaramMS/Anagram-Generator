@@ -24,9 +24,9 @@ totalTime=0.0
 #status = tk.Label(root, text='Time Taken : ' + str(totalTime)+' seconds', relief=SUNKEN, anchor=W)
 
 def selectionCall():
-    selection=str(radValue.get())
-    print('Selected RadioButton: ',selection)
+    selection=str(radValue.get())    
     if (selection=='1'):
+        print('Selected Theme: ','Light')
         root.config(bg='#FFFFFF')
         label01.config(bg='#FFFFFF', fg='#000000')
         entry01.config(bg='#FFFFFF', fg='#000000')
@@ -41,6 +41,7 @@ def selectionCall():
         #status.config(bg='#FFFFFF', fg='#000000')
 
     if (selection=='2'):
+        print('Selected Theme: ','Dark')
         root.config(bg='#011627')
         label01.config(bg='#011627', fg='#01BAEF')
         entry01.config(bg='#011627', fg='#01BAEF')
@@ -55,6 +56,7 @@ def selectionCall():
         #status.config(bg='#011627', fg='#01BAEF')
     
     elif (selection=='3'):
+        print('Selected Theme: ','Contrast')
         root.config(bg='#000000')
         label01.config(bg='#000000', fg='#FFFFFF')
         entry01.config(bg='#000000', fg='#FFFFFF')
@@ -124,6 +126,7 @@ def generateAnagram():
             if(result == True):
                 mylist.append(wow)
                 mylist = list(dict.fromkeys(mylist))
+
         length = len(mylist)
         for j in range(length):
             quote = str(mylist[j] + '\n')
@@ -136,7 +139,6 @@ def generateAnagram():
         print(totalTime)
         print(databaselist)
         print(ss)
-        print(list_length)
         
     text01.configure(state='disabled')
 
